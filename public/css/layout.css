@@ -1,0 +1,28 @@
+.my-card-body{
+    height: calc( 50vh - (55px + 48px) );
+}
+
+.my-card-header{
+    height: 40.05px;
+}
+
+.elipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.my-stop-watch{
+    font-size: 35px;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+@media screen and (max-width:768px) {
+    .my-card-body{
+        height: auto;
+        max-height: 50vh;
+    }
+}
