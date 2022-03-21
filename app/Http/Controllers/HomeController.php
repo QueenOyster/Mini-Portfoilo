@@ -42,6 +42,7 @@ class HomeController extends Controller
         // dd($logs);
 
         $chartData = DB::table('logs')
+            ->where('user_id', '=', \Auth::id())
             ->select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as tasks'))
             ->whereMonth('logs.created_at', Carbon::today())
             ->groupBy('date')
@@ -114,6 +115,7 @@ class HomeController extends Controller
             ->get();
 
         $chartData = DB::table('logs')
+            ->where('user_id', '=', \Auth::id())
             ->select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as tasks'))
             ->whereMonth('logs.created_at', Carbon::today())
             ->groupBy('date')
@@ -142,6 +144,7 @@ class HomeController extends Controller
 //        dd($logs);
 
         $chartData = DB::table('logs')
+            ->where('user_id', '=', \Auth::id())
             ->select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as tasks'))
             ->whereMonth('logs.created_at', Carbon::today())
             ->groupBy('date')
